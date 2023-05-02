@@ -16,17 +16,17 @@ public class Pizza {
 
     public Pizza(Boolean isVeg){
 
-        if (isVeg){
+        if (isVeg == true){
             price =300;
-            cheesePrice =80;
             toppingsPrice = 70;
+            totalPrice += price;
         }
         else {
             price = 400;
-            cheesePrice =80;
             toppingsPrice = 120;
-
+            totalPrice += price;
         }
+        cheesePrice =80;
         bill = "Base Price Of The Pizza:"+price+"\n";
     }
 
@@ -53,7 +53,7 @@ public class Pizza {
 
     public void addTakeaway(){
         if (isBagAdded == false){
-            toppingsPrice = totalPrice + bagPrice;
+            totalPrice = totalPrice + bagPrice;
             isBagAdded = true;
         }
 
